@@ -230,7 +230,7 @@ function guideScreen() {
       <tr><td>BR-01</td><td>Only Sales registers equipment</td><td>Equipment tab hidden for Field Technician</td></tr>
       <tr><td>BR-02</td><td>Sales and Field Technicians associate tanks to wells</td><td>Associations screen, both profiles</td></tr>
       <tr><td>BR-03</td><td>A tank feeds many wells; a well receives many products</td><td>Associations, Consumption per well</td></tr>
-      <tr><td>BR-04</td><td>Maximum 3 chemical products per well</td><td>Associate button disabled, rule message</td></tr>
+      <tr><td>BR-04</td><td>Maximum 3 chemical products per well</td><td>Counter "n of 3 products". With products A–D a 4th product also breaks BR-05, so that message is shown; BR-04 is covered by unit tests</td></tr>
       <tr><td>BR-05</td><td>Products A and C never on the same well</td><td>Blocked association; Well-1 conflict flagged</td></tr>
       <tr><td>BR-06</td><td>Equipment belongs to one site; many sites supported</td><td>Site selector filters every screen</td></tr>
       <tr><td>BR-07</td><td>Autonomy counted until 20% of capacity</td><td>Days to 20%, dashed line on the level bar</td></tr>
