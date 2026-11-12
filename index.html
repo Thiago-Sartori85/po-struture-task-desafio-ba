@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chemical Injection Manager – Prototype</title>
+  <meta name="description" content="Wizard of Oz prototype of the Chemical Injection Management System (Business Analyst challenge).">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="banner" role="note">
+    Prototype · Demonstration data (fictional values) · Names from Figure 1 of the challenge
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <span>Chemical Injection Manager</span>
+    </div>
+    <div class="controls">
+      <label>Site
+        <select id="site-select" data-change="site"></select>
+      </label>
+      <label>Profile
+        <select id="profile-select" data-change="profile">
+          <option value="sales">Sales</option>
+          <option value="field">Field Technician</option>
+        </select>
+      </label>
+      <span class="clock" id="clock" title="Simulated time"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" aria-label="Screens"></nav>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <span>Specification prototype · Business Analyst challenge</span>
+    <button type="button" class="link-button" data-action="toggle-oz">Behind the curtain (Shift + O)</button>
+  </footer>
+
+  <aside class="oz" id="oz" aria-label="Behind the curtain" hidden></aside>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
