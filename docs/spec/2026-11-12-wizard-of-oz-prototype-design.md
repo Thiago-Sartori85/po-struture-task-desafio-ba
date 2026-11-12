@@ -15,7 +15,7 @@ Decisions agreed during design:
 
 - Values are **fictional demonstration data**, labelled on every screen. Tank, pump, well and product names come from Figure 1 of the challenge.
 - The Oz panel is **hidden by default** and opens with a keyboard shortcut or a documented URL parameter.
-- Stack: **plain HTML, CSS and JavaScript, no build, no dependencies**, published with GitHub Pages.
+- Stack: **plain HTML, CSS and JavaScript, no build, no dependencies**, deployed on Vercel.
 - UI and documents in **English**, consistent with the specification.
 
 ## 2. Screens and behaviour
@@ -115,7 +115,7 @@ docs/spec/ · docs/plan/
 README.md
 ```
 
-README: challenge context, approach, links (GitHub Pages prototype, Miro project route board, specification PDF), a 5-step demo script using the Oz panel, repository structure, how to run tests. Published with GitHub Pages from `main`, root folder.
+README: challenge context, approach, links (Vercel prototype, Miro project route board, specification PDF), a 5-step demo script using the Oz panel, repository structure, how to run tests. Deployed on Vercel from `main` (static, no build); every push publishes a new version.
 
 ## 8. Out of scope
 

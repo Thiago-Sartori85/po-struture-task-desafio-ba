@@ -4,7 +4,7 @@ Technical task for a Product Owner / Business Analyst selection process: specify
 
 | | Link |
 | --- | --- |
-| **Working prototype** | https://thiago-sartori85.github.io/po-struture-task-desafio-ba/ |
+| **Working prototype** | https://po-struture-task-desafio-ba.vercel.app/ |
 | **Project route board (Miro)** | https://miro.com/app/board/uXjVEPPIUUI=/ |
 | **Full specification (PDF)** | [docs/specification/Specification.pdf](docs/specification/Specification.pdf) |
 | **Prototype design spec** | [docs/spec/2026-11-12-wizard-of-oz-prototype-design.md](docs/spec/2026-11-12-wizard-of-oz-prototype-design.md) |
@@ -22,7 +22,7 @@ Technical task for a Product Owner / Business Analyst selection process: specify
 | Lo-fi prototype | Specification, section 8 · [docs/specification/lo-fi](docs/specification/lo-fi) |
 | Suggested features and KPIs | Specification, section 9 |
 | Development methodology and prioritization simulation | Specification, section 10 (MoSCoW, WSJF, release roadmap) |
-| Working prototype | This repository, published with GitHub Pages |
+| Working prototype | This repository, deployed on Vercel |
 
 ## Approach
 
@@ -44,7 +44,7 @@ Key choices:
 
 A Wizard of Oz prototype shows a product working before its integrations exist. Here the **screens and business rules are real**; the **external real-time data system is simulated** by a hidden operator panel called *Behind the curtain*.
 
-- Open it with **Shift + O**, the link in the footer, or the URL [`?oz=1`](https://thiago-sartori85.github.io/po-struture-task-desafio-ba/?oz=1).
+- Open it with **Shift + O**, the link in the footer, or the URL [`?oz=1`](https://po-struture-task-desafio-ba.vercel.app/?oz=1).
 - The panel holds each tank's "real" consumption, but **the screens never read it**: they measure the injection rate from volume readings, exactly as the real system would.
 - All numbers are **fictional demonstration data**. Tank, pump, well and product names and the tank–well links of Site 1 come from Figure 1.
 - Data lives only in the browser tab; reloading the page resets the demo.

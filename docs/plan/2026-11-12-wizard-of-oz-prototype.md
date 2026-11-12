@@ -10,7 +10,7 @@
 
 ## Global constraints
 
-- No runtime dependencies, no build step; the page works from any static server (GitHub Pages).
+- No runtime dependencies, no build step; the page works from any static server (Vercel).
 - Fixed banner: `Prototype · Demonstration data (fictional values) · Names from Figure 1 of the challenge`.
 - Names from Figure 1: C-TK-1..4, Pump-1..4, Well-1..4, products A–D. Seed values exactly as in spec section 4.
 - Status order: Stale → Critical (≤ 20% or ≤ 3 days) → Attention (≤ horizon, default 7) → OK. Stale after 2 simulated hours without a reading.
@@ -59,5 +59,5 @@ Functions:
 
 - [ ] Smoke: four tabs render, Field Technician has no Equipment tab, A + C on Well-2 blocked, +7 days changes C-TK-1 status.
 - [ ] Copy Specification.pdf and PNGs to `docs/specification/`.
-- [ ] README: context, approach, links (Pages, Miro, PDF), business rules, field and function guide, 5-step demo, structure, how to test.
-- [ ] Commit and push; enable GitHub Pages (main, root).
+- [ ] README: context, approach, links (Vercel, Miro, PDF), business rules, field and function guide, 5-step demo, structure, how to test.
+- [ ] Commit and push; deploy on Vercel from `main` (static, no build).
