@@ -1,11 +1,13 @@
 # Chemical Injection Management System – Business Analyst Challenge
 
+**Author / Autor:** Thiago Sartori Cardoso
+
 **[English](#english)** · **[Português](#português)**
 
 | | Link |
 | --- | --- |
 | **Working prototype / Protótipo** | https://po-struture-task-desafio-ba.vercel.app/ |
-| **Project route / Rota do projeto (Miro)** | https://miro.com/app/board/uXjVEPPIUUI=/ |
+| **Project route / Rota do projeto (Miro)** | https://miro.com/app/board/uXjVEPPIUUI=/?share_link_id=663015320580 |
 | **Specification / Especificação (PDF)** | [docs/specification/Specification.pdf](docs/specification/Specification.pdf) |
 | **Quick guide (EN)** | [docs/guides/Prototype-Quick-Guide.pdf](docs/guides/Prototype-Quick-Guide.pdf) |
 | **Guia rápido (PT)** | [docs/guides/Guia-Rapido-do-Prototipo.pdf](docs/guides/Guia-Rapido-do-Prototipo.pdf) |
@@ -27,11 +29,11 @@ Technical task for a Product Owner / Business Analyst selection process: specify
 | Challenge item | Where |
 | --- | --- |
 | Project deliverables list | Specification, section 5 |
-| Project activities by phase (Elicitation, Detailing, + Planning) | Specification, section 6 · Miro board |
+| Project activities by phase (Discovery, Detailing, + Planning) | Specification, section 6 · Miro board |
 | Requirements and business rules | Specification, section 7 (sections 1–4 are the discovery that feeds it) |
 | Lo-fi prototype | Specification, section 8 · [docs/specification/lo-fi](docs/specification/lo-fi) |
 | Suggested features and KPIs | Specification, section 9 |
-| Development methodology and prioritization simulation | Specification, section 10 (MoSCoW, WSJF, release roadmap) |
+| Development methodology and prioritization simulation | Specification, section 10 (MoSCoW, WSJF – what to build first, release roadmap) |
 | Working prototype (extra) | This repository, deployed on Vercel |
 | Test guide for evaluators (extra) | [docs/guides](docs/guides) – English and Portuguese |
 
@@ -77,7 +79,7 @@ The full 10-step test route is in the [quick guide](docs/guides/Prototype-Quick-
 | Screen | What it does | Requirements |
 | --- | --- | --- |
 | Autonomy | Tanks sorted by days to 20%, with level, volume, injection rate and status; editable reorder horizon | FR-07, FR-09, FR-10 |
-| Equipment | Register tanks and wells with validation; visible only to Sales | FR-01–FR-04, BR-01 |
+| Equipment | Register tanks and wells with validation; visible only to Sales | FR-02, FR-03, BR-01 |
 | Associations | Link and unlink tanks and wells; rules checked before saving; audit trail | FR-05, BR-02–BR-05, NFR-04 |
 | Consumption per well | Estimated consumption by product and total, chemical per m³, rule check | FR-08 |
 | Guide | Rules, field meanings, formulas and panel controls, inside the prototype | — |
@@ -94,6 +96,29 @@ The full 10-step test route is in the [quick guide](docs/guides/Prototype-Quick-
 | BR-06 | Equipment belongs to one site; many sites supported | Site selector filters every screen |
 | BR-07 | Autonomy is counted until 20% of capacity | Days to 20%, dashed line on the level bar |
 | BR-08 | Each tank stores one product and has one pump (Figure 1) | Tank registry |
+
+#### Specification coverage
+
+How each requirement of the specification appears in the prototype.
+
+| Requirement | In the prototype |
+| --- | --- |
+| FR-01 Register sites | Not in the prototype: Site 1 and Site 2 are pre-loaded |
+| FR-02 Register tanks | Equipment screen |
+| FR-03 Register wells | Equipment screen |
+| FR-04 Register pumps and products | Partly: the pump is a field of the tank; products A–D are pre-loaded |
+| FR-05 Link and unlink tanks and wells, checking the rules | Associations screen |
+| FR-06 Receive hourly tank volume and well production | Simulated by *Behind the curtain* |
+| FR-07 Injection rate per tank | Autonomy screen |
+| FR-08 Estimated consumption per well | Consumption per well screen |
+| FR-09 Days until 20% capacity | Autonomy screen |
+| FR-10 Filter by site | Site selector |
+| NFR-01 Browser only, no installation | Web page on Vercel |
+| NFR-02 Access by profile | Simulated with the Profile selector |
+| NFR-03 Hourly data | Simulated hourly readings |
+| NFR-04 Audit trail | Associations screen |
+| NFR-05 Flag missing or stale data | *Stale* status, forecast hidden |
+| US-01 to US-06 | Covered by the four screens above |
 
 #### Fields and functions
 
@@ -181,7 +206,7 @@ npm run smoke                     # browser smoke test (needs Playwright with Ch
 
 ### Out of scope
 
-Real backend or API, persistence across reloads, real authentication, editing or deleting registered equipment, ERP or logistics integration.
+Real backend or API, persistence across reloads, real authentication, registering sites and products, editing or deleting registered equipment, ERP or logistics integration.
 
 ---
 
@@ -196,11 +221,11 @@ Tarefa técnica de um processo seletivo para Product Owner / Business Analyst: e
 | Item do desafio | Onde está |
 | --- | --- |
 | Lista de entregáveis do projeto | Especificação, seção 5 |
-| Atividades do projeto por etapa (Levantamento, Detalhamento, + Planejamento) | Especificação, seção 6 · quadro do Miro |
+| Atividades do projeto por etapa (Discovery, Detalhamento, + Planejamento) | Especificação, seção 6 · quadro do Miro |
 | Requisitos e regras de negócio | Especificação, seção 7 (as seções 1 a 4 são o discovery que a alimenta) |
 | Protótipo lo-fi | Especificação, seção 8 · [docs/specification/lo-fi](docs/specification/lo-fi) |
 | Funcionalidades sugeridas e KPIs | Especificação, seção 9 |
-| Metodologia de desenvolvimento e simulação de priorização | Especificação, seção 10 (MoSCoW, WSJF, roadmap de releases) |
+| Metodologia de desenvolvimento e simulação de priorização | Especificação, seção 10 (MoSCoW, WSJF – o que construir primeiro, roadmap de releases) |
 | Protótipo funcional (extra) | Este repositório, publicado na Vercel |
 | Guia de teste para avaliadores (extra) | [docs/guides](docs/guides) – inglês e português |
 
@@ -246,7 +271,7 @@ O roteiro completo, com 10 passos, está no [guia rápido](docs/guides/Guia-Rapi
 | Tela | O que faz | Requisitos |
 | --- | --- | --- |
 | Autonomy | Tanques ordenados pelos dias até 20%, com nível, volume, taxa de injeção e status; horizonte de reposição editável | FR-07, FR-09, FR-10 |
-| Equipment | Cadastro de tanques e poços com validação; visível só para Sales | FR-01–FR-04, BR-01 |
+| Equipment | Cadastro de tanques e poços com validação; visível só para Sales | FR-02, FR-03, BR-01 |
 | Associations | Liga e desliga tanques e poços; regras verificadas antes de salvar; trilha de auditoria | FR-05, BR-02–BR-05, NFR-04 |
 | Consumption per well | Consumo estimado por produto e total, químico por m³, verificação de regras | FR-08 |
 | Guide | Regras, significado dos campos, fórmulas e controles do painel, dentro do protótipo | — |
@@ -263,6 +288,29 @@ O roteiro completo, com 10 passos, está no [guia rápido](docs/guides/Guia-Rapi
 | BR-06 | Cada equipamento pertence a um site; o sistema tem vários sites | Seletor de site filtra todas as telas |
 | BR-07 | A autonomia é contada até 20% da capacidade | Days to 20% e linha tracejada na barra de nível |
 | BR-08 | Cada tanque guarda um produto e tem uma bomba (Figura 1) | Cadastro de tanque |
+
+#### Cobertura da especificação
+
+Como cada requisito da especificação aparece no protótipo.
+
+| Requisito | No protótipo |
+| --- | --- |
+| FR-01 Cadastrar sites | Fora do protótipo: o Site 1 e o Site 2 já vêm carregados |
+| FR-02 Cadastrar tanques | Tela Equipment |
+| FR-03 Cadastrar poços | Tela Equipment |
+| FR-04 Cadastrar bombas e produtos | Em parte: a bomba é um campo do tanque; os produtos A a D já vêm carregados |
+| FR-05 Ligar e desligar tanques e poços, verificando as regras | Tela Associations |
+| FR-06 Receber volume dos tanques e produção dos poços a cada hora | Simulado pelo *Behind the curtain* |
+| FR-07 Taxa de injeção por tanque | Tela Autonomy |
+| FR-08 Consumo estimado por poço | Tela Consumption per well |
+| FR-09 Dias até 20% da capacidade | Tela Autonomy |
+| FR-10 Filtrar por site | Seletor de site |
+| NFR-01 Só navegador, sem instalação | Página web na Vercel |
+| NFR-02 Acesso por perfil | Simulado com o seletor Profile |
+| NFR-03 Dados a cada hora | Leituras horárias simuladas |
+| NFR-04 Trilha de auditoria | Tela Associations |
+| NFR-05 Sinalizar dado ausente ou desatualizado | Status *Stale*, previsão oculta |
+| US-01 a US-06 | Cobertas pelas quatro telas acima |
 
 #### Campos e funções
 
@@ -350,4 +398,4 @@ npm run smoke                     # teste de navegador (precisa do Playwright co
 
 ### Fora do escopo
 
-Back-end ou API reais, dados persistentes entre recarregamentos, autenticação real, edição ou exclusão de equipamentos cadastrados, integração com ERP ou logística.
+Back-end ou API reais, dados persistentes entre recarregamentos, autenticação real, cadastro de sites e produtos, edição ou exclusão de equipamentos cadastrados, integração com ERP ou logística.

@@ -25,7 +25,7 @@ One page. Header: app name, **site selector**, **profile selector** (Sales / Fie
 | Screen | Behaviour | Traces to |
 | --- | --- | --- |
 | **1. Autonomy** | Tanks of the selected site sorted by days to 20%, lowest first: product, volume, level bar, injection rate, days to 20%, status badge. Reorder horizon (days) editable. | US-04, US-05, FR-07, FR-09, FR-10 |
-| **2. Equipment** | Register a tank (ID, product, capacity, material, pump) or a well (ID, production). New items appear immediately. Tab visible only to Sales. | US-01, US-02, FR-01–04, BR-01 |
+| **2. Equipment** | Register a tank (ID, product, capacity, material, pump) or a well (ID, production). New items appear immediately. Tab visible only to Sales. | US-01, US-02, FR-02, FR-03, BR-01 |
 | **3. Associations** | Pick a well, see its tanks, add or remove a tank. Blocks product A + C on one well and a 4th product, showing the rule and disabling the button. Every change is written to an audit log (user profile, simulated time, action). | US-03, FR-05, BR-02–05, NFR-04 |
 | **4. Consumption per well** | Per well: products, production, estimated consumption per product and total, rule check. Well-1 starts with the A + C conflict shown in Figure 1. | US-06, FR-08 |
 
@@ -119,4 +119,4 @@ README: challenge context, approach, links (Vercel prototype, Miro project route
 
 ## 8. Out of scope
 
-Real backend or API, persistence across reloads, login and real authentication, mobile-specific layout beyond a readable responsive page, editing or deleting registered equipment, ERP or logistics integration.
+Real backend or API, persistence across reloads, login and real authentication, registering sites and products, mobile-specific layout beyond a readable responsive page, editing or deleting registered equipment, ERP or logistics integration.
