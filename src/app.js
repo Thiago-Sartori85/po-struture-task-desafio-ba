@@ -308,7 +308,7 @@ function ozPanel() {
     <section><h3>Tank</h3>
       ${t ? `<div class="row"><select data-change="oz-tank" aria-label="Tank">${tanks.map((x) => `<option value="${esc(x.id)}" ${x.id === t.id ? 'selected' : ''}>${esc(x.id)}</option>`).join('')}</select></div>
       <div class="row">
-        <button class="btn oz-btn" data-action="refill">Refill to capacity</button>
+        <button class="btn oz-btn" data-action="refill">Refill ${esc(t.id)} to capacity</button>
         <button class="btn oz-btn" data-action="sensor">${t.sensorOn ? 'Stop sensor' : 'Resume sensor'}</button>
       </div>
       <p class="small" style="margin:4px 0">Real consumption (hidden from the screens)</p>

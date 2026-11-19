@@ -35,6 +35,15 @@ test('a refill fills the tank and does not change the rate', () => {
   assert.ok(near(injectionRate(tank(s, 'C-TK-1').readings), 120));
 });
 
+test('a refill changes only the selected tank', () => {
+  const s = createInitialState();
+  const others = s.tanks.filter((t) => t.id !== 'C-TK-3');
+  const before = others.map((t) => ({ id: t.id, level: t.level, readings: t.readings.length }));
+  refill(s, 'C-TK-3');
+  assert.equal(tank(s, 'C-TK-3').level, 4000);
+  assert.deepEqual(others.map((t) => ({ id: t.id, level: t.level, readings: t.readings.length })), before);
+});
+
 test('sensor off for 3 hours makes the tank stale; resume clears it', () => {
   const s = createInitialState();
   setSensor(s, 'C-TK-2', false);

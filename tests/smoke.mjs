@@ -73,7 +73,11 @@ try {
   await page.click('[data-action="advance"][data-hours="168"]');
   assert.equal(await statusOf('C-TK-1'), 'Critical');
   await page.selectOption('#oz select[data-change="oz-tank"]', 'C-TK-3');
+  assert.equal(await page.locator('[data-action="refill"]').innerText(), 'Refill C-TK-3 to capacity');
+  const volumeOf = (id) => page.locator('tr', { hasText: id }).locator('td').nth(3).innerText();
+  const c1Before = await volumeOf('C-TK-1');
   await page.click('[data-action="refill"]');
+  assert.equal(await volumeOf('C-TK-1'), c1Before);
   await page.click('[data-action="advance"][data-hours="1"]');
   assert.equal(await statusOf('C-TK-3'), 'OK');
   await shot('5-behind-the-curtain');

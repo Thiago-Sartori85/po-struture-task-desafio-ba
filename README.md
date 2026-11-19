@@ -159,7 +159,7 @@ Well consumption       = Σ tank rate × (well production ÷ production of all w
 | --- | --- |
 | +1 hour · +1 day · +7 days | New hourly volume readings arriving |
 | Tank selector | Picks the tank the controls below act on |
-| Refill to capacity | A chemical delivery |
+| Refill *tank* to capacity | A chemical delivery to the selected tank only; the table re-sorts by days to 20% |
 | Stop / Resume sensor | A tank that stops sending data (it keeps using chemical) |
 | Real consumption (hidden) | How much the tank really uses; the screens never read it |
 | Well production | The production reported for each well |
@@ -178,7 +178,7 @@ Well consumption       = Σ tank rate × (well production ÷ production of all w
 2. **Plan** – I split the work into four small tasks ([plan](docs/plan/2026-11-12-wizard-of-oz-prototype.md)).
 3. **Tests first** – I wrote the tests for the rules and formulas before the code.
 4. **Build** – business logic, then the simulation, then the screens and the in-app guide.
-5. **Check** – 22 automated tests, plus a browser test that walks through the demo.
+5. **Check** – 23 automated tests, plus a browser test that walks through the demo.
 6. **Publish** – the code is on GitHub, and every update goes online on Vercel by itself.
 
 **The tools.**
@@ -188,7 +188,7 @@ Well consumption       = Σ tank rate × (well production ÷ production of all w
 | Screens | HTML and CSS, no framework | Easy to open, read and explain; nothing to compile |
 | Logic | Plain JavaScript | Runs straight in the browser; one file per job |
 | Data | Kept in the browser's memory | Everyone starts from the same demo; reload to start again |
-| Tests | Node.js test runner | 22 tests of rules, formulas and simulation, no extra installs |
+| Tests | Node.js test runner | 23 tests of rules, formulas and simulation, no extra installs |
 | Browser test | Playwright | Clicks through the demo like a user would |
 | Hosting | Vercel, linked to GitHub | Each change to the code goes online automatically |
 
@@ -215,7 +215,7 @@ Nothing to build or install. The page needs a small local server:
 
 ```bash
 python3 -m http.server 8000      # then open http://localhost:8000
-npm test                          # 22 automated tests (Node 18 or newer)
+npm test                          # 23 automated tests (Node 18 or newer)
 npm run smoke                     # browser test (needs Playwright with Chromium)
 ```
 
@@ -366,7 +366,7 @@ Consumo do poço         = Σ taxa do tanque × (produção do poço ÷ produç�
 | --- | --- |
 | +1 hour · +1 day · +7 days | Novas leituras horárias de volume chegando |
 | Seletor de tanque | Escolhe o tanque em que os controles abaixo agem |
-| Refill to capacity | Uma entrega de químico |
+| Refill *tank* to capacity | Uma entrega de químico só no tanque selecionado; a tabela reordena por dias até 20% |
 | Stop / Resume sensor | Um tanque que para de mandar dados (ele continua usando químico) |
 | Real consumption (hidden) | Quanto o tanque realmente usa; as telas nunca leem esse valor |
 | Well production | A produção informada para cada poço |
@@ -385,7 +385,7 @@ Consumo do poço         = Σ taxa do tanque × (produção do poço ÷ produç�
 2. **Plano** – dividi o trabalho em quatro tarefas pequenas ([plano](docs/plan/2026-11-12-wizard-of-oz-prototype.md)).
 3. **Testes primeiro** – escrevi os testes das regras e das fórmulas antes do código.
 4. **Construção** – lógica de negócio, depois a simulação, depois as telas e o guia dentro do app.
-5. **Conferência** – 22 testes automáticos, mais um teste no navegador que percorre a demonstração.
+5. **Conferência** – 23 testes automáticos, mais um teste no navegador que percorre a demonstração.
 6. **Publicação** – o código está no GitHub, e cada atualização entra no ar sozinha na Vercel.
 
 **As ferramentas.**
@@ -395,7 +395,7 @@ Consumo do poço         = Σ taxa do tanque × (produção do poço ÷ produç�
 | Telas | HTML e CSS, sem framework | Fácil de abrir, ler e explicar; nada para compilar |
 | Lógica | JavaScript puro | Roda direto no navegador; um arquivo para cada função |
 | Dados | Guardados na memória do navegador | Todo mundo começa da mesma demonstração; recarregue para recomeçar |
-| Testes | Test runner do Node.js | 22 testes de regras, fórmulas e simulação, sem instalar nada a mais |
+| Testes | Test runner do Node.js | 23 testes de regras, fórmulas e simulação, sem instalar nada a mais |
 | Teste no navegador | Playwright | Clica pela demonstração como um usuário faria |
 | Hospedagem | Vercel, ligada ao GitHub | Cada mudança no código entra no ar automaticamente |
 
@@ -422,7 +422,7 @@ Nada para compilar nem instalar. A página só precisa de um servidor local simp
 
 ```bash
 python3 -m http.server 8000      # depois abra http://localhost:8000
-npm test                          # 22 testes automáticos (Node 18 ou mais novo)
+npm test                          # 23 testes automáticos (Node 18 ou mais novo)
 npm run smoke                     # teste no navegador (precisa do Playwright com Chromium)
 ```
 
